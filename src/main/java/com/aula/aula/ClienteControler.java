@@ -1,12 +1,7 @@
 package com.aula.aula;
 
 import org.springframework.web.bind.annotation.*;
-
-import java.awt.desktop.SystemEventListener;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/cliente")
