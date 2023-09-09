@@ -1,0 +1,27 @@
+<div th:switch="${clientes}">
+    <h2 th:case="null">Nenhum cliente adicionado</h2>
+    <div th:case="*">
+        <h2>Clientes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Editar</th>
+                <th>Remover</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.id}"></td>
+                <td th:text="${cliente.nome}"></td>
+                <td th:text="${cliente.sobrenome}"></td>
+                <td><a th:href="@{/edit/{id}(id=${cliente.id})}">Editar</a></td>
+                <td><a th:href="@{/delete/{id}(id=${cliente.id})}">Remover</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/novoCliente">Adicionar novo cliente</a></p>
+</div>
